@@ -1,17 +1,37 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\CarbonInterface;
+use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 
-class User extends Authenticatable
+/**
+ * @property-read int $id
+ * @property-read string $name
+ * @property-read string $email
+ * @property CarbonInterface|null $email_verified_at
+ * @property-read string $password
+ * @property-read string|null $remember_token
+ * @property-read string|null $two_factor_secret
+ * @property-read string|null $two_factor_recovery_codes
+ * @property-read CarbonInterface|null $two_factor_confirmed_at
+ * @property-read CarbonInterface $created_at
+ * @property-read CarbonInterface $updated_at
+ */
+final class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, TwoFactorAuthenticatable;
+    /** @use HasFactory<UserFactory> */
+    use HasFactory;
+
+    use Notifiable;
+    use TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.

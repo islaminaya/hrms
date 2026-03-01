@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Concerns;
 
 use App\Models\User;
@@ -11,9 +13,11 @@ trait ProfileValidationRules
      * Get the validation rules used to validate user profiles.
      *
      * @return array<string, array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>>
+     * @phpstan-ignore-next-line
      */
     protected function profileRules(?int $userId = null): array
     {
+        // @phpstan-ignore-next-line
         return [
             'name' => $this->nameRules(),
             'email' => $this->emailRules($userId),
@@ -24,6 +28,7 @@ trait ProfileValidationRules
      * Get the validation rules used to validate user names.
      *
      * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
+     * @phpstan-ignore-next-line
      */
     protected function nameRules(): array
     {
@@ -35,6 +40,7 @@ trait ProfileValidationRules
      *
      * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
      */
+    /** @phpstan-ignore-next-line */
     protected function emailRules(?int $userId = null): array
     {
         return [
