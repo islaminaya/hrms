@@ -3,18 +3,17 @@
 declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
+use Inertia\Inertia;
 
-Route::get('/', function (): void {
-    inertia('welcome', [
-        'canRegister' => Features::enabled(Features::registration()),
-    ]);
-})->name('home');
 
-Route::middleware(['auth', 'verified'])->group(function (): void {
-    Route::get('dashboard', function (): void {
-        inertia('dashboard');
-    })->name('dashboard');
-});
+Route::get(
+    '/', fn () => Inertia::render('welcome')
+)->name('home');
+
+Route::get(
+    'dashboard', fn () => Inertia::render('dashboard')
+)
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 require __DIR__.'/settings.php';
