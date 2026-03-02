@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Shared\Gender\Models;
+namespace App\Modules\Shared\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-final class Gender extends Model
+final class SpecialNeeds extends Model
 {
     use HasTranslations;
 

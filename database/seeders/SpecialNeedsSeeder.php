@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Shared\SpecialNeeds\Models\SpecialNeeds;
+use App\Modules\Shared\Models\SpecialNeeds;
 use Illuminate\Database\Seeder;
 
 final class SpecialNeedsSeeder extends Seeder

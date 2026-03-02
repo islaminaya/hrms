@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Shared\Religion\Models;
+namespace App\Modules\Shared\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-final class Religion extends Model
+final class MaritalStatus extends Model
 {
     use HasTranslations;
 

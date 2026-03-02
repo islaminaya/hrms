@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Staff\Sponsorship\Models\Sponsorship;
+use App\Modules\Employee\Models\Sponsorship;
 use Illuminate\Database\Seeder;
 
 final class SponsorshipSeeder extends Seeder

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Organization\Department\Models;
+namespace App\Modules\Organization\Models;
 
 use Database\Factories\DepartmentFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;

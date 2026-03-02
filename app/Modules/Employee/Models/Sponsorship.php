@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Staff\Sponsorship\Models;
+namespace App\Modules\Employee\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;

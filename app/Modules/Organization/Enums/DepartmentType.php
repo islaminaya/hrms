@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Organization\Department\Enums;
+namespace App\Modules\Organization\Enums;
 
 enum DepartmentType: string
 {

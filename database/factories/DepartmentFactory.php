@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Database\Factories;
 
-use App\Modules\Organization\Department\Enums\DepartmentType;
-use App\Modules\Organization\Department\Models\Department;
+use App\Modules\Organization\Enums\DepartmentType;
+use App\Modules\Organization\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

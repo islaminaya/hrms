@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Shared\Gender\Models\Gender;
+use App\Modules\Shared\Models\Gender;
 use Illuminate\Database\Seeder;
 
 final class GenderSeeder extends Seeder

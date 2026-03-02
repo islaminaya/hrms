@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Shared\Country\Models\Country;
+use App\Modules\Shared\Models\Country;
 use Illuminate\Database\Seeder;
 
 final class CountrySeeder extends Seeder

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Shared\MaritalStatus\Models\MaritalStatus;
+use App\Modules\Shared\Models\MaritalStatus;
 use Illuminate\Database\Seeder;
 
 final class MaritalStatusSeeder extends Seeder

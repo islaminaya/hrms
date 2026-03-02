@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Database\Seeders;
 
-use App\Modules\Shared\Religion\Models\Religion;
+use App\Modules\Shared\Models\Religion;
 use Illuminate\Database\Seeder;
 
 final class ReligionSeeder extends Seeder
