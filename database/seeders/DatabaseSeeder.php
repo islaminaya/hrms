@@ -25,6 +25,7 @@ final class DatabaseSeeder extends Seeder
         $this->call([
             GenderSeeder::class,
             CountrySeeder::class,
+            DepartmentSeeder::class,
         ]);
     }
 }
