@@ -37,7 +37,6 @@ return new class extends Migration
             $table->foreignId('department_id')->constrained('departments');
             $table->foreignId('nationality_id')->constrained('countries');
             $table->foreignId('place_or_birth')->nullable()->constrained('countries');
-            $table->foreignId('sponshorship_id')->constrained('sponsorships');
 
             $table->string('email')->unique();
             $table->string('phone')->nullable();

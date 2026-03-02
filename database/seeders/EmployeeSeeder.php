@@ -15,5 +15,14 @@ final class EmployeeSeeder extends Seeder
     public function run(): void
     {
         Employee::factory(50)->create();
+
+        $employees = Employee::all();
+
+        foreach ($employees as $employee) {
+            /** @var Employee $head */
+            $head = $employees->random();
+            $employee->head_id = $head->id;
+            $employee->save();
+        }
     }
 }
