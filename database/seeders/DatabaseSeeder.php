@@ -26,6 +26,7 @@ final class DatabaseSeeder extends Seeder
             GenderSeeder::class,
             CountrySeeder::class,
             DepartmentSeeder::class,
+            MaritalStatusSeeder::class,
         ]);
     }
 }
