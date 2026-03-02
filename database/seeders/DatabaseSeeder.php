@@ -28,6 +28,7 @@ final class DatabaseSeeder extends Seeder
             DepartmentSeeder::class,
             MaritalStatusSeeder::class,
             ReligionSeeder::class,
+            SpecialNeedsSeeder::class,
         ]);
     }
 }
