@@ -1,13 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
-
 use App\Modules\Shared\Country\Models\Country;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class CountrySeeder extends Seeder
+final class CountrySeeder extends Seeder
 {
     /**
      * Run the database seeds.

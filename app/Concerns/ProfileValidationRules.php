@@ -13,6 +13,7 @@ trait ProfileValidationRules
      * Get the validation rules used to validate user profiles.
      *
      * @return array<string, array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>>
+     *
      * @phpstan-ignore-next-line
      */
     protected function profileRules(?int $userId = null): array
@@ -28,6 +29,7 @@ trait ProfileValidationRules
      * Get the validation rules used to validate user names.
      *
      * @return array<int, \Illuminate\Contracts\Validation\Rule|array<mixed>|string>
+     *
      * @phpstan-ignore-next-line
      */
     protected function nameRules(): array

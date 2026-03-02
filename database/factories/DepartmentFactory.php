@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Modules\Organization\Department\Enums\DepartmentType;
@@ -7,11 +9,12 @@ use App\Modules\Organization\Department\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<Department>
+ * @extends Factory<Department>
  */
-class DepartmentFactory extends Factory
+final class DepartmentFactory extends Factory
 {
     protected $model = Department::class;
+
     /**
      * Define the model's default state.
      *

@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Modules\Shared\MaritalStatus\Models\MaritalStatus;
 use Illuminate\Database\Seeder;
 
-class MaritalStatusSeeder extends Seeder
+final class MaritalStatusSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        MaritalStatus::create([
+        MaritalStatus::query()->create([
             'name' => [
                 'en' => 'Single',
                 'ar' => 'أعزب',
@@ -20,7 +22,7 @@ class MaritalStatusSeeder extends Seeder
             'code' => '1',
         ]);
 
-        MaritalStatus::create([
+        MaritalStatus::query()->create([
             'name' => [
                 'en' => 'Married',
                 'ar' => 'متزوج',
@@ -28,7 +30,7 @@ class MaritalStatusSeeder extends Seeder
             'code' => '2',
         ]);
 
-        MaritalStatus::create([
+        MaritalStatus::query()->create([
             'name' => [
                 'en' => 'Other',
                 'ar' => 'آخر',

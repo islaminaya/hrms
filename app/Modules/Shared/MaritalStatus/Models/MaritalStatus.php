@@ -1,14 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Modules\Shared\MaritalStatus\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class MaritalStatus extends Model
+final class MaritalStatus extends Model
 {
+    use HasFactory;
     use HasTranslations;
-    /** @var array<string> $translatable*/
+
+    /** @var array<string> */
     public $translatable = ['name'];
 
     protected $fillable = [

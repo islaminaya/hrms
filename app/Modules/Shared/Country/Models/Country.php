@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Modules\Shared\Country\Models;
 
 use Database\Factories\CountryFactory;
@@ -7,19 +9,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 
-class Country extends Model
+final class Country extends Model
 {
-    /** @use HasFactory<\Database\Factories\CountryFactory> */
+    /** @use HasFactory<CountryFactory> */
     use HasFactory;
 
     use HasTranslations;
-    /** @var array<string> $translatable*/
-    public $translatable = ['name'];
 
-    protected static function newFactory(): CountryFactory
-    {
-        return CountryFactory::new();
-    }
+    /** @var array<string> */
+    public $translatable = ['name'];
 
     protected $fillable = [
         'name',
@@ -30,4 +28,9 @@ class Country extends Model
         'created_by',
         'updated_by',
     ];
+
+    protected static function newFactory(): CountryFactory
+    {
+        return CountryFactory::new();
+    }
 }

@@ -1,19 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Modules\Shared\Gender\Models\Gender;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class GenderSeeder extends Seeder
+final class GenderSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Gender::create([
+        Gender::query()->create([
             'name' => [
                 'en' => 'Male',
                 'ar' => 'ذكر',
@@ -21,7 +22,7 @@ class GenderSeeder extends Seeder
             'code' => '1',
         ]);
 
-        Gender::create([
+        Gender::query()->create([
             'name' => [
                 'en' => 'Female',
                 'ar' => 'انثى',

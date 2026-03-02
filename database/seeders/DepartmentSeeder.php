@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Modules\Organization\Department\Models\Department;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DepartmentSeeder extends Seeder
+final class DepartmentSeeder extends Seeder
 {
     /**
      * Run the database seeds.
