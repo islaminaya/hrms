@@ -17,6 +17,7 @@
         "laravel/wayfinder": "^0.1.9",
         "nunomaduro/essentials": "^1.2",
         "spatie/laravel-data": "^4.20",
+        "spatie/laravel-translatable": "^6.13",
         "spatie/laravel-typescript-transformer": "^2.6"
     },
     "require-dev": {
