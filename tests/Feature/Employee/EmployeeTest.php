@@ -3,7 +3,9 @@
 declare(strict_types=1);
 
 use App\Modules\Employee\Actions\CreateEmployeeAction;
+use App\Modules\Employee\Actions\UpdateEmployeeAction;
 use App\Modules\Employee\Data\CreateEmployeeData;
+use App\Modules\Employee\Data\UpdateEmployeeData;
 use App\Modules\Employee\Models\Employee;
 
 it('creates an employee', function (): void {
@@ -26,6 +28,28 @@ it('fails to create employee with invalid data', function (array $overrides): vo
     $this->expectException(TypeError::class);
 
     CreateEmployeeData::from($employee->toArray());
+
+})->with('invalid-data');
+
+it('updated an employee with valid data', function (): void {
+    $this->seed();
+    $employee = Employee::query()->first();
+
+    $newEmployee = Employee::factory()->make();
+
+    $updated = (new UpdateEmployeeAction())->handle(UpdateEmployeeData::from($newEmployee), $employee);
+
+    $this->assertDatabaseHas('employees', UpdateEmployeeData::from($updated)->toArray());
+});
+
+it('fails to update an employee with invalid data', function (array $overrides): void {
+    $this->seed();
+
+    $employee = Employee::factory()->make($overrides);
+
+    $this->expectException(TypeError::class);
+
+    UpdateEmployeeData::from($employee->toArray());
 
 })->with('invalid-data');
 

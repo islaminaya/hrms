@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Modules\Employee\Data;
 
-use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
 
 final class CreateEmployeeData extends Data
@@ -51,8 +50,5 @@ final class CreateEmployeeData extends Data
 
         public ?int $created_by,
         public ?int $updated_by,
-
-        public ?CarbonImmutable $created_at,
-        public ?CarbonImmutable $updated_at,
     ) {}
 }
