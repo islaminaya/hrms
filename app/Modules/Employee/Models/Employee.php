@@ -17,10 +17,10 @@ final class Employee extends Model
     /** @use HasFactory<EmployeeFactory> */
     use HasFactory;
 
+    protected $guarded = [];
+
     protected static function newFactory(): EmployeeFactory
     {
         return EmployeeFactory::new();
     }
-
-    protected $guarded = [];
 }

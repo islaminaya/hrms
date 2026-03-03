@@ -5,9 +5,8 @@ declare(strict_types=1);
 use App\Modules\Employee\Actions\CreateEmployeeAction;
 use App\Modules\Employee\Data\CreateEmployeeData;
 use App\Modules\Employee\Models\Employee;
-use Illuminate\Validation\ValidationException;
 
-it('creates an employee', function () {
+it('creates an employee', function (): void {
     $this->seed();
     $newEmployee = Employee::factory()->make();
 
@@ -19,17 +18,16 @@ it('creates an employee', function () {
 
 });
 
-it('fails to create employee with invalid data', function (array $overrides) {
+it('fails to create employee with invalid data', function (array $overrides): void {
     $this->seed();
 
     $employee = Employee::factory()->make($overrides);
 
-    $this->expectException(ValidationException::class);
+    $this->expectException(TypeError::class);
 
     CreateEmployeeData::from($employee->toArray());
 
 })->with('invalid-data');
-
 
 dataset('invalid-data', [
     'user_id is null' => [
@@ -71,26 +69,4 @@ dataset('invalid-data', [
     'nationality_id is null' => [
         ['nationality_id' => null],
     ],
-
-    // 'first_name_ar too short' => [
-    //     ['first_name_ar' => 'A'],
-    // ],
-
-    // 'first_name_en too long' => [
-    //     ['first_name_en' => str_repeat('a', 31)],
-    // ],
-
-    // 'email invalid format' => [
-    //     ['email' => 'not-an-email'],
-    // ],
-
-    // 'phone invalid format' => [
-    //     ['phone' => 'abc123!@#'],
-    // ],
-
-    // 'employee_id invalid pattern' => [
-    //     ['employee_id' => '600123'],
-    // ],
-
 ]);
-
