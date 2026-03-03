@@ -31,6 +31,8 @@ final class DatabaseSeeder extends Seeder
             SpecialNeedsSeeder::class,
             SponsorshipSeeder::class,
             EmployeeSeeder::class,
+            IdentityTypeSeeder::class,
+            IdentitySeeder::class,
         ]);
     }
 }

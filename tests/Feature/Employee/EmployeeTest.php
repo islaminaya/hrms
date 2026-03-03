@@ -8,7 +8,7 @@ use App\Modules\Employee\Data\CreateEmployeeData;
 use App\Modules\Employee\Data\UpdateEmployeeData;
 use App\Modules\Employee\Models\Employee;
 
-it('creates an employee', function (): void {
+it('creates an employee with valid data', function (): void {
     $this->seed();
     $newEmployee = Employee::factory()->make();
 
@@ -21,8 +21,6 @@ it('creates an employee', function (): void {
 });
 
 it('fails to create employee with invalid data', function (array $overrides): void {
-    $this->seed();
-
     $employee = Employee::factory()->make($overrides);
 
     $this->expectException(TypeError::class);
@@ -43,8 +41,6 @@ it('updated an employee with valid data', function (): void {
 });
 
 it('fails to update an employee with invalid data', function (array $overrides): void {
-    $this->seed();
-
     $employee = Employee::factory()->make($overrides);
 
     $this->expectException(TypeError::class);
