@@ -33,6 +33,7 @@ final class EmployeeFactory extends Factory
         return [
             'user_id' => fake()->randomElement(User::query()->pluck('id')->toArray()),
             'head_id' => null,
+            'employee_id' => fake()->regexify('50[01][0-9]{3}'),
 
             'first_name_ar' => fake('ar')->firstName(),
             'middle_name_ar' => fake()->randomElement([null, fake('ar')->firstName()]),

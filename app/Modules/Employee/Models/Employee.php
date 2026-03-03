@@ -21,4 +21,6 @@ final class Employee extends Model
     {
         return EmployeeFactory::new();
     }
+
+    protected $guarded = [];
 }

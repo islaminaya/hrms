@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('head_id')->nullable()->constrained('employees');
 
+            $table->string('employee_id', 10);
+
             $table->string('first_name_ar');
             $table->string('middle_name_ar')->nullable();
             $table->string('third_name_ar')->nullable();
@@ -38,7 +40,7 @@ return new class extends Migration
             $table->foreignId('nationality_id')->constrained('countries');
             $table->foreignId('place_or_birth')->nullable()->constrained('countries');
 
-            $table->string('email')->unique();
+            $table->string('email')->nullable()->unique();
             $table->string('phone')->nullable();
             $table->string('image')->nullable();
 
