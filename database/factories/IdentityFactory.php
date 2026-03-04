@@ -29,8 +29,8 @@ final class IdentityFactory extends Factory
             'identity_type_id' => fake()->randomElement(IdentityType::query()->pluck('id')->toArray()),
             'identity_number' => fake()->unique()->regexify('[12][0-9]{9}'),
             'place_of_issue' => fake()->city(),
-            'issue_date' => fake()->date(),
-            'expiry_date' => fake()->date(),
+            'issue_date' => $issueDate = fake()->date(),
+            'expiry_date' => fake()->dateTimeBetween($issueDate, '+2 years')->format('Y-m-d'),
             'created_by' => fake()->randomElement([null, ...User::query()->pluck('id')->toArray()]),
             'updated_by' => fake()->randomElement([null, ...User::query()->pluck('id')->toArray()]),
         ];

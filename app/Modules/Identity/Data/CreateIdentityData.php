@@ -6,6 +6,7 @@ namespace App\Modules\Identity\Data;
 
 use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
+use Spatie\LaravelData\Support\Validation\ValidationContext;
 
 final class CreateIdentityData extends Data
 {
@@ -19,4 +20,21 @@ final class CreateIdentityData extends Data
         public ?int $created_by,
         public ?int $updated_by,
     ) {}
+
+    /**
+     * @return array<string, mixed>
+     */
+    public static function rules(?ValidationContext $context = null): array
+    {
+        return [
+            'employee_id' => ['required', 'integer'],
+            'identity_type_id' => ['required', 'integer', 'exists:identity_types,id'],
+            'identity_number' => ['required', 'string', 'size:10'],
+            'place_of_issue' => ['nullable', 'string'],
+            'issue_date' => ['nullable', 'date'],
+            'expiry_date' => ['required', 'date', 'after:issue_date'],
+            'created_by' => ['nullable', 'integer'],
+            'updated_by' => ['nullable', 'integer'],
+        ];
+    }
 }
