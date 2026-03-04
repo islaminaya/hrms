@@ -17,11 +17,10 @@ test('creates an identity with valid data', function (): void {
         ->handle(CreateIdentityData::from($newIdentity));
 
     $this->assertInstanceOf(Identity::class, $identity);
-    $this->assertDatabaseHas('identities', [
-        ...CreateIdentityData::from($identity)->toArray(),
-        'issue_date' => $identity->issue_date->format('Y-m-d H:i:s'),
-        'expiry_date' => $identity->expiry_date->format('Y-m-d H:i:s'),
-    ]);
+    $this->assertDatabaseHas(
+        $identity->getTable(),
+        $identity->getAttributes()
+    );
 });
 
 it('updates an identity with valid data', function (): void {
@@ -29,15 +28,16 @@ it('updates an identity with valid data', function (): void {
     $identity = Identity::query()->first();
     $newIdentity = Identity::factory()->make();
 
-    (new UpdateIdentityAction())->handle(UpdateIdentityData::from($newIdentity), $identity);
+    (new UpdateIdentityAction())
+        ->handle(UpdateIdentityData::from($newIdentity), $identity);
+
     $identity->refresh();
 
     $this->assertInstanceOf(Identity::class, $identity);
-    $this->assertDatabaseHas('identities', [
-        ...UpdateIdentityData::from($identity)->toArray(),
-        'issue_date' => $identity->issue_date->format('Y-m-d H:i:s'),
-        'expiry_date' => $identity->expiry_date->format('Y-m-d H:i:s'),
-    ]);
+    $this->assertDatabaseHas(
+        $identity->getTable(),
+        $identity->getAttributes()
+    );
 });
 
 test('fails to create an identity with invalid data', function (array $overrides): void {

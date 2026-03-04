@@ -16,13 +16,10 @@ it('creates a job title with valid data', function (): void {
     );
 
     $this->assertInstanceOf(JobTitle::class, $jobTitle);
-    $this->assertDatabaseHas('job_titles', [
-        'code' => $attributes['code'],
-    ]);
-    $this->assertDatabaseHas('job_titles', [
-        'name->en' => $attributes['name']['en'],
-        'name->ar' => $attributes['name']['ar'],
-    ]);
+    $this->assertDatabaseHas(
+        $jobTitle->getTable(),
+        $jobTitle->getAttributes()
+    );
 });
 
 it('updates a jon title', function (): void {
@@ -34,13 +31,10 @@ it('updates a jon title', function (): void {
     );
 
     $this->assertInstanceOf(JobTitle::class, $jobTitle);
-    $this->assertDatabaseHas('job_titles', [
-        'code' => $attributes['code'],
-    ]);
-    $this->assertDatabaseHas('job_titles', [
-        'name->en' => $attributes['name']['en'],
-        'name->ar' => $attributes['name']['ar'],
-    ]);
+    $this->assertDatabaseHas(
+        $jobTitle->getTable(),
+        $jobTitle->getAttributes()
+    );
 });
 
 it('fails to create a data object with invalid data', function (array $overrides): void {

@@ -16,7 +16,10 @@ it('creates an employee with valid data', function (): void {
 
     $employee = (new CreateEmployeeAction())->handle($data);
 
-    $this->assertDatabaseHas('employees', CreateEmployeeData::from($employee)->toArray());
+    $this->assertDatabaseHas(
+        $employee->getTable(),
+        $employee->getAttributes()
+    );
 
 });
 
@@ -38,7 +41,10 @@ it('updates an employee with valid data', function (): void {
 
     $updated = (new UpdateEmployeeAction())->handle(UpdateEmployeeData::from($newEmployee), $employee);
 
-    $this->assertDatabaseHas('employees', UpdateEmployeeData::from($updated)->toArray());
+    $this->assertDatabaseHas(
+        $updated->getTable(),
+        $updated->getAttributes()
+    );
 });
 
 it('fails to create employee data with invalid data', function (array $overrides): void {
