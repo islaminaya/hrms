@@ -2,24 +2,23 @@
 
 declare(strict_types=1);
 
-namespace App\Modules\Identity\Data;
+namespace App\Modules\JobTitle\Data;
 
-use App\Modules\Identity\Concerns\IdentityValidationRules;
+use App\Modules\JobTitle\Concerns\EmployeeTitleValidationRules;
 use Carbon\CarbonImmutable;
 use Spatie\LaravelData\Data;
 use Spatie\LaravelData\Support\Validation\ValidationContext;
 
-final class UpdateIdentityData extends Data
+final class CreateEmployeeTitleData extends Data
 {
-    use IdentityValidationRules;
+    use EmployeeTitleValidationRules;
 
     public function __construct(
         public int $employee_id,
-        public int $identity_type_id,
-        public string $identity_number,
-        public ?string $place_of_issue,
-        public ?CarbonImmutable $issue_date,
-        public CarbonImmutable $expiry_date,
+        public int $job_title_id,
+        public bool $is_primary,
+        public CarbonImmutable $start_date,
+        public ?CarbonImmutable $end_date,
         public ?int $created_by,
         public ?int $updated_by,
     ) {}
@@ -29,6 +28,6 @@ final class UpdateIdentityData extends Data
      */
     public static function rules(?ValidationContext $context = null): array
     {
-        return self::identityRules();
+        return self::assignmentRule();
     }
 }

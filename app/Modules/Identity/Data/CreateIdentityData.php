@@ -12,6 +12,7 @@ use Spatie\LaravelData\Support\Validation\ValidationContext;
 final class CreateIdentityData extends Data
 {
     use IdentityValidationRules;
+
     public function __construct(
         public string $employee_id,
         public int $identity_type_id,
