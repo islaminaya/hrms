@@ -37,6 +37,7 @@ final class DatabaseSeeder extends Seeder
             EmployeeJobTitleSeeder::class,
             PositionSeeder::class,
             EmployeePositionSeeder::class,
+            RankSeeder::class,
         ]);
     }
 }
