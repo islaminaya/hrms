@@ -22,7 +22,7 @@ it('creates a rank with valid data', function (): void {
     );
 });
 
-it('updated a rank with valid data', function (): void {
+it('updates a rank with valid data', function (): void {
     $this->seed();
     $rank = Rank::query()->first();
     $newRank = Rank::factory()->raw();
