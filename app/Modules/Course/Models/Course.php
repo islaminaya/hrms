@@ -16,7 +16,7 @@ final class Course extends Model
     protected $fillable = [
         'employee_id',
         'course_name',
-        'course_type',
+        'course_type_id',
         'issuer',
         'awarding_year',
         'course_period',

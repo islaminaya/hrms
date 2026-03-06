@@ -90,8 +90,8 @@ dataset('invalid-data', [
         ['course_name' => str_repeat('a', 256)],
     ],
 
-    'course_type is too long' => [
-        ['course_type' => str_repeat('a', 256)],
+    'course_type_id is string' => [
+        ['course_type_id' => 'a'],
     ],
 
     'issuer is too long' => [

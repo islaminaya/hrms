@@ -14,7 +14,7 @@ trait CourseValidationRules
         return [
             'employee_id' => ['required', 'integer'],
             'course_name' => ['nullable', 'string', 'max:255'],
-            'course_type' => ['nullable', 'string', 'max:255'],
+            'course_type_id' => ['nullable', 'integer'],
             'issuer' => ['nullable', 'string', 'max:255'],
             'awarding_year' => ['nullable', 'integer'],
             'course_period' => ['nullable', 'string', 'max:255'],

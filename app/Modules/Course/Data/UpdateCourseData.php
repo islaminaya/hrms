@@ -15,7 +15,7 @@ final class UpdateCourseData extends Data
     public function __construct(
         public ?int $employee_id,
         public ?string $course_name,
-        public ?string $course_type,
+        public ?int $course_type_id,
         public ?string $issuer,
         public ?int $awarding_year,
         public ?string $course_period,

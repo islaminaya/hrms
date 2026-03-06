@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Database\Factories;
 
 use App\Modules\Course\Models\Course;
+use App\Modules\Course\Models\CourseType;
 use App\Modules\Employee\Models\Employee;
 use App\Modules\Shared\Models\Country;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -26,7 +27,7 @@ final class CourseFactory extends Factory
         return [
             'employee_id' => fake()->randomElement(Employee::query()->pluck('id')->toArray()),
             'course_name' => fake()->words(asText: true),
-            'course_type' => fake()->word(),
+            'course_type_id' => fake()->randomElement(CourseType::query()->pluck('id')->toArray()),
             'issuer' => fake()->company(),
             'awarding_year' => fake()->year(),
             'course_period' => fake()->word(),
