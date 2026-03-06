@@ -42,6 +42,7 @@ final class DatabaseSeeder extends Seeder
             ExperienceSeeder::class,
             CourseTypeSeeder::class,
             CourseSeeder::class,
+            AchievementSeeder::class,
         ]);
     }
 }
